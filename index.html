@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #1a237e, #0d47a1);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        .greeting {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out, glow 1.5s infinite alternate;
+        }
+
+        .subtext {
+            font-size: 1.2rem;
+            margin-top: 0;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .fireworks::before,
+        .fireworks::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 70%);
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: fireworks 2s linear infinite;
+            border-radius: 50%;
+        }
+
+        .fireworks::after {
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 30px #ffeb3b;
+            }
+            to {
+                text-shadow: 0 0 20px #ffeb3b, 0 0 30px #ffeb3b, 0 0 40px #ffeb3b;
+            }
+        }
+
+        @keyframes fireworks {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) scale(0.5);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) scale(1.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="fireworks"></div>
+        <h1 class="greeting">🎉 Happy New Year 2025! 🎉</h1>
+        <p class="subtext">Wishing you a year filled with joy, success, and love.</p>
+    </div>
+</body>
+</html>
